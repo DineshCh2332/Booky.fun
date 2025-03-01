@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Collection App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Book Collection App</h1>
+    </header>
+    <nav>
+        <button onclick="navigate('search')">Search Books</button>
+        <button onclick="navigate('reviews')">Reviews & Ratings</button>
+        <button onclick="navigate('wishlist')">Wishlist</button>
+        <button onclick="navigate('tracker')">Reading Progress</button>
+        <button onclick="navigate('recommendations')">Recommendations</button>
+        <button onclick="navigate('offline')">Offline Reading</button>
+        <button onclick="navigate('social')">Social Features</button>
+        <button onclick="navigate('customize')">Customization</button>
+        <button onclick="navigate('store')">Bookstore</button>
+        <button onclick="navigate('login')">Login</button>
+    </nav>
+    <main>
+        <p>Select an option to get started.</p>
+    </main>
+    <script>
+        function navigate(section) {
+            alert('Navigating to ' + section);
+        }
+    </script>
+</body>
+</html>
