@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+        }
+
+        .container {
+            width: 350px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff7e5f;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #feb47b;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        a {
+            color: #ff7e5f;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="login-form" class="form-container">
+            <h2>Login</h2>
+            <input type="email" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+            <p>Don't have an account? <a onclick="toggleForm()">Register</a></p>
+        </div>
+
+        <div id="register-form" class="form-container hidden">
+            <h2>Register</h2>
+            <input type="text" id="register-name" placeholder="Name" required>
+            <input type="email" id="register-email" placeholder="Email" required>
+            <input type="password" id="register-password" placeholder="Password" required>
+            <button onclick="register()">Register</button>
+            <p>Already have an account? <a onclick="toggleForm()">Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm() {
+            document.getElementById("login-form").classList.toggle("hidden");
+            document.getElementById("register-form").classList.toggle("hidden");
+        }
+
+        function login() {
+            let email = document.getElementById("login-email").value;
+            let password = document.getElementById("login-password").value;
+            
+            if(email && password) {
+                alert("Logged in successfully!");
+            } else {
+                alert("Please enter all fields.");
+            }
+        }
+
+        function register() {
+            let name = document.getElementById("register-name").value;
+            let email = document.getElementById("register-email").value;
+            let password = document.getElementById("register-password").value;
+            
+            if(name && email && password) {
+                alert("Registered successfully!");
+                toggleForm();
+            } else {
+                alert("Please enter all fields.");
+            }
+        }
+    </script>
+</body>
+</html>
